@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kanishka's Portfolio</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>  
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">Kanishka</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="aboutme.html">About Me</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="collaborate.html">Collaborate</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+    </ul>
+  </nav>
+<body>
+  <main>
+    <div class="landing-image">
+      <div>
+        <h1 class="landing-text">Welcome to My Portfolio</h1>
+        <p class="landing-subtext">Explore my projects and skills</p>
+      </div>
+    </div>
+    <h2 style="text-align:center;"class="project-heading">My Projects</h2>
+
+    
+
+    <div class="project-collage" id="project-collage"></div>
+    <script>
+      const projects = [
+        { title: "Project 1 - Responsive Website", img: "https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=600&q=80" },
+        { title: "Project 2 - Mobile App", img: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=600&q=80" },
+        { title: "Project 3 - Mobile App", img: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=600&q=80" },
+        { title: "Project 4 - Mobile App", img: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=600&q=80" },
+        { title: "Project  - Mobile App", img: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=600&q=80" },
+
+        // add more projects here
+      ];
+    
+      const collage = document.getElementById('project-collage');
+    
+      projects.forEach(project => {
+        const card = document.createElement('div');
+        card.className = 'project-card';
+        card.tabIndex = 0;
+    
+        card.innerHTML = `
+          <img src="${project.img}" alt="${project.title}" />
+          <div class="project-overlay">
+            <p class="project-caption">${project.title}</p>
+          </div>
+        `;
+    
+        collage.appendChild(card);
+      });
+    </script>    
+  </div>
+  </main>
+
+  <script>
+    // Carousel logic
+    const slides = document.querySelectorAll('.carousel-slide');
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const nextBtn = document.querySelector('.carousel-btn.next');
+    let currentIndex = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+    }
+
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex === 0) ? slides.length -1 : currentIndex - 1;
+      showSlide(currentIndex);
+    });
+
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      showSlide(currentIndex);
+    });
+
+    // Optional: auto slide every 5 seconds
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      showSlide(currentIndex);
+    }, 5000);
+  </script>
+
+</body>
+</html>
+  <footer>
+    <div class="footer-container">
+      <p>
+        <a href="#">Home</a>    
+        <a href="#aboutme.html" target="_blank">  About   </a>      
+        <a href="#Collaborate.html" target="_blank">  Services    </a>
+        <a href="mailto:kanishka.b@example.com" target="_blank">  Contact   </a>
+      </p>
+      <p>Kanishka Bhandari. All rights reserved.</p>
+    </div>
+  </footer>
+  
+</body>
+</html>

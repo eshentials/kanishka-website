@@ -1,0 +1,319 @@
+/* styles.css */
+/* styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Ancizar+Sans:ital,wght@0,100..1000;1,100..1000&display=swap'); /*for body*/
+@import url('https://fonts.googleapis.com/css2?family=Ancizar+Sans:ital,wght@0,100..1000;1,100..1000&family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&display=swap'); /*for heading*/ 
+@import url('https://fonts.googleapis.com/css2?family=Ancizar+Sans:ital,wght@0,100..1000;1,100..1000&family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap'); /*for body 2*/
+@import url('https://fonts.googleapis.com/css2?family=Ancizar+Sans:ital,wght@0,100..1000;1,100..1000&family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&family=Bebas+Neue&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap'); /*for film*/
+@import url('https://fonts.googleapis.com/css2?family=Ancizar+Sans:ital,wght@0,100..1000;1,100..1000&family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&family=Bebas+Neue&family=Jost:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap'); /*for body 3*/
+@import url('https://fonts.googleapis.com/css2?family=Ancizar+Sans:ital,wght@0,100..1000;1,100..1000&family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&family=Bebas+Neue&family=Indie+Flower&family=Jost:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap'); /*for heading 2*/
+@import url('https://fonts.googleapis.com/css2?family=Ancizar+Sans:ital,wght@0,100..1000;1,100..1000&family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&family=Bebas+Neue&family=Caveat:wght@400..700&family=Indie+Flower&family=Jost:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap'); /*for heading 3*/
+
+:root {
+    --heading-1-font: 'Ancizar Serif', serif; /* Heading 1 */
+    --heading-film-font: 'Bebas Neue'; /* Heading film */
+    --body-1-font: 'Raleway', sans-serif; /* Body 1 */
+    --body-2-font: 'Ancizar Sans', sans-serif; /* Body 2 */
+    --body-3-font: 'Jost', sans-serif; /* Body 3 */
+    --heading-3-font: 'Indie Flower', cursive; /* Heading */
+    --heading-4-font: 'Caveat', cursive; /* Heading */
+    /* Color Palette */
+    --color-white: #FFFFFF;
+    --color-pure-black: #000000;
+    --color-light-gray: #F0F0F0;
+    --color-red: #F7374F;
+    --color-maroon: #88304E;
+    --color-purple: #522546;
+    --color-black: #2C2C2C;
+  }
+
+body {
+  
+    margin: 0;
+    font-family: var(--font-heading);
+    background-color: var(--color-red);
+    color: #333;
+  }
+  .heading-film-font {
+    font-family: var(--heading-film-font);
+}
+
+.body-3-font {
+    font-family: var(--body-3-font);
+}
+
+.body-2-font {
+    font-family: var(--body-2-font);
+}
+
+.heading-4-font {
+    font-family: var(--heading-4-font);
+}
+
+.body-1-font {
+    font-family: var(--body-1-font);
+}
+
+.heading-3-font {
+    font-family: var(--heading-3-font);
+}
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--color-white);
+  border-bottom: 1px solid #ddd;
+  padding: 1.5rem 3rem; /* increased padding */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Fix the font-size typo: "4 rem" should be "4rem" */
+.nav-logo {
+  font-family: var(--heading-1-font);
+  font-size: 3rem; /* was 4 rem (with space, which is invalid) */
+  font-weight: bold;
+  color: var(--color-maroon);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 3rem; /* optional: increase space between links */
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  font-family: var(--body-1-font);
+  color: var(--color-red);
+  font-weight: 500;
+  font-size: 1.4rem; /* increased from default */
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: var(--color-purple);
+}
+
+  @media (max-width: 600px) {
+    .nav-links {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+  }
+  .landing-image {
+    position:inherit;       /* stays fixed while scrolling */
+    top: 0;
+    left: 0;
+    width: 100vw;          /* full viewport width */
+    height: 100vh;         /* full viewport height */
+    background-size: cover;        /* cover entire div */
+    background-position: center;   /* center the image */
+    background-color: var(--color-purple);
+    background-repeat: no-repeat;
+    z-index: -1;           /* behind all other content */
+  }
+  .landing-text,
+.landing-subtext {
+  position: relative; /* or absolute if parent has relative */
+  bottom: 2rem;      /* distance from bottom */
+  left: 2rem;        /* distance from left */
+  color: var(--color-white);
+  z-index: 10;
+  text-align: left;
+}
+
+/* Separate styling for each: */
+
+.landing-text {
+  font-family: var(--heading-1-font);
+  font-size: 6rem;
+  line-height: 1.2;
+  margin-bottom: 0.5rem; /* spacing between text and subtext */
+}
+
+.landing-subtext {
+  font-family: var(--body-1-font);
+  font-size: 3rem; /* maybe smaller for subtext? */
+  line-height: 1.2;
+}
+  /* Carousel container */
+  .carousel {
+    position: relative;
+    max-width: 900px;
+    margin: 3rem auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  }
+
+  /* Carousel slides */
+  .carousel-slide {
+    display: none;
+    width: 100%;
+    height: 500px;
+    color: var(--color-beige);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+
+  /* Show first slide */
+  .carousel-slide.active {
+    display: block;
+    animation: fadeIn 1s ease;
+  }
+
+  /* Slide text overlay */
+  .carousel-caption {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    background: rgba(83, 59, 77, 0.7); /* dark translucent */
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    max-width: 80%;
+    font-family: var(--heading-film-font);
+    font-size: 1.8rem;
+    line-height: 1.2;
+    color: var(--color-beige);
+  }
+
+  /* Fade in animation */
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+  /* Navigation buttons */
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--color-red);
+    border: none;
+    color: var(--color-beige);
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 50%;
+    user-select: none;
+    transition: background-color 0.3s;
+  }
+
+  .carousel-btn:hover {
+    background-color: var(--color-dark-pink);
+  }
+
+  .carousel-btn.prev {
+    left: 10px;
+  }
+
+  .carousel-btn.next {
+    right: 10px;
+  }
+  .project-heading {
+    text-align: center;
+    font-size: 2.5rem;
+    font-family: var(--font-heading);
+    margin-top: 4rem;
+  }
+  
+  .project-collage {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 500px), 1fr));
+    gap: clamp(36px, 2vw, 50px);
+    width: 100%;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    box-sizing: border-box;
+  }  
+  /* Each project card */
+  .project-card {
+    position: relative;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    border-radius: 0;
+    box-shadow: 0 6px 15px rgba(83, 59, 77, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .project-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 30px rgba(83, 59, 77, 0.3);
+  }
+
+  /* Project image */
+  .project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0%;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  .project-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 30px rgba(83, 59, 77, 0.3);
+  }
+  .project-card:hover img {
+    transform: scale(1.1);
+  }
+  /* Overlay */
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color:var(--color-purple); /* semi-transparent black */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none; /* so it doesn’t block hover */
+}
+
+/* Show overlay on hover */
+.project-card:hover .project-overlay {
+  opacity: 0.80;
+}
+
+  /* Caption overlay */
+  .project-caption {
+    color: var(--color-white);
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    padding: 0.75rem 1rem;
+    border-radius: 0;
+    text-align: center;
+    user-select: none;
+  }
+  footer {
+    background-color: var(--color-white);
+    padding: 1rem 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #444;
+    border-top: 1px solid #ddd;
+    margin-top: 2rem;
+  }
+  
+  .footer-container a {
+    color: #0077cc;
+    text-decoration: none;
+    margin: 0 0.5rem;
+  }
+  
+  .footer-container a:hover {
+    text-decoration: underline;
+  }
+
+  
+  
